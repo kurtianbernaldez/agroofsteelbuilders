@@ -127,6 +127,11 @@ h1, h2, h3, h4 { font-family: var(--font-heading); line-height: 1.2; }
   box-shadow: 0 2px 20px rgba(0,0,0,0.12);
 }
 
+/* Utility bar on homepage - make it transparent too */
+body.home .utility-bar {
+  background: rgba(200, 16, 46, 0.85);
+}
+
 .site-header .container {
   display: flex;
   justify-content: space-between;
@@ -1684,8 +1689,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); line-height: 1.2; }
 .service-page-card {
   position: relative;
   border-radius: var(--radius-lg);
-  overflow: hidden;
-  min-height: 320px;
+  min-height: 400px;
   transition: transform var(--transition), box-shadow var(--transition);
 }
 
@@ -1698,8 +1702,9 @@ h1, h2, h3, h4 { font-family: var(--font-heading); line-height: 1.2; }
   position: absolute;
   inset: 0;
   display: flex;
-  align-items: flex-end;
+  align-items: flex-start;
   padding: 32px;
+  overflow: visible;
 }
 
 .service-page-card__bg--1 { background: linear-gradient(135deg, #C8102E 0%, #e62040 100%); }
@@ -1731,6 +1736,29 @@ h1, h2, h3, h4 { font-family: var(--font-heading); line-height: 1.2; }
   font-size: 0.95rem;
   line-height: 1.6;
   opacity: 0.9;
+}
+
+.service-page-card__list {
+  margin-top: 16px;
+  padding-left: 0;
+  list-style: none;
+}
+
+.service-page-card__list li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  color: #fff;
+}
+
+.service-page-card__list li::before {
+  content: '\2713';
+  position: absolute;
+  left: 0;
+  color: #4ECDC4;
+  font-size: 0.9rem;
+  top: 1px;
 }
 
 /* ============================================
