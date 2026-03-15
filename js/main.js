@@ -51,6 +51,7 @@
         icon.classList.toggle('fa-times');
       }
     });
+    }
 
     mainNav.querySelectorAll('a').forEach(function (link) {
       link.addEventListener('click', function () {
@@ -175,8 +176,6 @@
         window.location.href = 'mailto:info@agroofsteel.com?subject=' + subject + '&body=' + body;
       }
     });
-  }
-
   }
 
   document.addEventListener('DOMContentLoaded', function () {

@@ -2122,6 +2122,40 @@ body.home .utility-bar {
   border-color: #fff;
 }
 
+/* Projects Category */
+.projects-category {
+  margin-bottom: 48px;
+}
+
+.projects-category-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 3px solid var(--primary);
+  display: inline-block;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.projects-grid .project-item {
+  height: 280px;
+}
+
+@media (max-width: 1024px) {
+  .projects-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 576px) {
+  .projects-grid { grid-template-columns: 1fr; }
+  .projects-grid .project-item { height: 240px; }
+}
+
 /* ============================================
    SCROLL ANIMATIONS
    ============================================ */

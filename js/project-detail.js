@@ -38,8 +38,23 @@
     var typeEl = document.getElementById('project-type');
     if (typeEl) typeEl.textContent = project.type;
 
-    var yearEl = document.getElementById('project-year');
-    if (yearEl) yearEl.textContent = project.year;
+    var clientEl = document.getElementById('project-client');
+    if (clientEl) clientEl.textContent = project.client;
+
+    var scopeEl = document.getElementById('project-scope');
+    if (scopeEl) scopeEl.textContent = project.scope;
+
+    var areaItem = document.getElementById('project-area-item');
+    var areaTypeEl = document.getElementById('project-area-type');
+    var areaValueEl = document.getElementById('project-area-value');
+    if (project.area && areaItem && areaTypeEl && areaValueEl) {
+      areaTypeEl.textContent = project.area.type;
+      areaValueEl.textContent = project.area.value;
+      areaItem.style.display = 'block';
+    }
+
+    var statusEl = document.getElementById('project-status');
+    if (statusEl) statusEl.textContent = project.status;
 
     var descEl = document.getElementById('project-description');
     if (descEl) descEl.innerHTML = '<p>' + escapeHtml(project.description) + '</p>';
