@@ -91,12 +91,12 @@
       </div>
     </a>
     <a href="services.html" class="service-card fade-up">
-      <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&q=80" alt="Construction Services" class="service-card__img">
+      <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&q=80" alt="Project Management Services" class="service-card__img">
       <div class="service-card__overlay"></div>
       <div class="service-card__content">
         <div class="service-card__num">04</div>
         <h3 class="service-card__title">Construction Services</h3>
-        <p class="service-card__desc">Comprehensive construction services from planning to completion, managing crews, materials, and timelines for on-time delivery.</p>
+        <p class="service-card__desc">Complete project coordination from planning to completion, managing crews, materials, and timelines for on-time delivery.</p>
         <span class="service-card__link">Learn More <i class="fas fa-arrow-right"></i></span>
       </div>
     </a>
@@ -275,39 +275,10 @@
       <h2 class="section-title">Our Recent Projects</h2>
       <p class="section-subtitle">A snapshot of the roofs, sheds, and steel structures we've delivered for our clients.</p>
     </div>
-    <div class="projects-grid-home">
-      <article class="project-card fade-up">
-        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=900&q=80" alt="Commercial Steel Building">
-        <div class="project-card__overlay">
-          <div class="project-card__details">
-            <h3>Commercial Steel Building</h3>
-            <p>Full structural steel and roofing package for a multi-bay commercial facility.</p>
-            <a href="projects.html" class="project-card__btn">View Project</a>
-          </div>
-        </div>
-      </article>
-      <article class="project-card fade-up">
-        <img src="https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=900&q=80" alt="Industrial Warehouse">
-        <div class="project-card__overlay">
-          <div class="project-card__details">
-            <h3>Industrial Warehouse</h3>
-            <p>High-clearance warehouse with insulated roofing and cladding.</p>
-            <a href="projects.html" class="project-card__btn">View Project</a>
-          </div>
-        </div>
-      </article>
-      <article class="project-card fade-up">
-        <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=900&q=80" alt="Agricultural Building">
-        <div class="project-card__overlay">
-          <div class="project-card__details">
-            <h3>Agricultural Building</h3>
-            <p>Custom farm shed designed for machinery access and weather protection.</p>
-            <a href="projects.html" class="project-card__btn">View Project</a>
-          </div>
-        </div>
-      </article>
+    <div class="projects-grid-home" id="recent-projects">
+      <!-- Dynamic content loaded via js/index-projects.js -->
     </div>
-    <div style="text-align:center;margin-top:40px;" class="fade-up">
+    <div style="text-align:center;margin-top:80px;" class="fade-up">
       <a href="projects.html" class="btn btn-primary">View All Projects <i class="fas fa-arrow-right"></i></a>
     </div>
   </div>
@@ -413,6 +384,8 @@
 
 <div id="footer-placeholder"></div>
 
+<script src="js/projects-data.js"></script>
+<script src="js/index-projects.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>
