@@ -833,12 +833,12 @@ body.home .utility-bar {
   z-index: 1;
 }
 
-.category-block__bg--1 { background-image: url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&q=80'); }
+.category-block__bg--1 { background-image: url('../img/products/roofing/super_rib/super-rib-white.png'); }
 .category-block__bg--2 { background-image: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80'); }
 .category-block__bg--3 { background-image: url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80'); }
 .category-block__bg--4 { background-image: url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&q=80'); }
 .category-block__bg--5 { background-image: url('https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=800&q=80'); }
-.category-block__bg--6 { background-image: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80'); }
+.category-block__bg--6 { background-image: url('../img/products/purlins/c-purlins.png'); }
 .category-block__bg--7 { background-image: url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&q=80'); }
 
 .category-block__content {
@@ -2430,4 +2430,149 @@ body.home .utility-bar {
   .project-detail-title {
     font-size: 1.6rem;
   }
+}
+
+/* Products Filter Section */
+.products-filter-section {
+  padding: 48px 0;
+  background: var(--white);
+}
+
+.filter-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 40px;
+  justify-content: center;
+}
+
+.filter-tab {
+  padding: 14px 28px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: 2px solid var(--border);
+  background: var(--white);
+  color: var(--text-muted);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-tab:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.filter-tab.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--white);
+}
+
+.product-filter-display {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .product-filter-display {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+.product-filter-image-wrap {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--light-bg);
+}
+
+.product-filter-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: filter 0.3s ease;
+}
+
+.product-filter-info {
+  padding: 16px 0;
+}
+
+.filter-product-title {
+  font-size: 2rem;
+  color: var(--text);
+  margin: 0 0 16px;
+}
+
+.filter-product-description {
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin: 0 0 24px;
+}
+
+.filter-colors-section {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+}
+
+.filter-colors-heading {
+  font-size: 1rem;
+  color: var(--text);
+  margin: 0 0 16px;
+  font-weight: 700;
+}
+
+.filter-color-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.filter-color-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: var(--white);
+}
+
+.filter-color-item:hover {
+  border-color: var(--accent);
+  box-shadow: var(--shadow-md);
+}
+
+.filter-color-swatch {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  flex-shrink: 0;
+}
+
+.filter-color-name {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+.filter-product-specs {
+  margin-top: 32px;
+  background: var(--off-white);
+  padding: 24px;
+  border-radius: var(--radius-lg);
+}
+
+.filter-product-specs h3 {
+  font-size: 1.2rem;
+  color: var(--text);
+  margin: 0 0 16px;
+  padding-bottom: 12px;
+  border-bottom: 3px solid var(--accent);
 }

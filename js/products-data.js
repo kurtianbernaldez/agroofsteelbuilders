@@ -8,7 +8,12 @@ var ROOFING_BENDED_COLORS = [
   { name: 'Brown', hex: '#5c4033' },
   { name: 'Gray', hex: '#6b7280' },
   { name: 'Wood Grain', hex: '#8b6914' },
-  { name: 'Terracotta', hex: '#b3543a' }
+  { name: 'Terracotta', hex: '#b3543a' },
+  { name: 'Foamgreen', hex: '#a8f0cb' }
+];
+
+var SUPER_CRIMP_COLORS = [
+  { name: 'Beige', hex: '#d4b896' }
 ];
 
 window.PRODUCTS_DATA = {
@@ -27,16 +32,16 @@ window.PRODUCTS_DATA = {
       name: 'Super Rib',
       category: 'roofing',
       description: 'Super Rib is a classic trapezoidal steel roofing profile with prominent ribs that provide excellent drainage and structural stiffness. It is widely used for industrial, commercial and agricultural buildings. The profile offers a traditional appearance and is available in a range of thicknesses and colors to suit various design and load requirements.',
-      image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80',
+      image: 'img/products/roofing/super_rib/super-rib-white.png',
       specImage: 'images/specs/super-rib-spec.jpg',
       colors: ROOFING_BENDED_COLORS,
       specs: {
-        'Available Thickness': '0.40 mm – 0.48 mm',
-        'Effective Coverage': '762 mm',
-        'Base Metal Type': 'AZ150 Galvalume',
-        'Substrate': 'Aluminium-zinc alloy coated steel',
-        'Paint Coating': 'Polyester or PVDF',
-        'Rainfall Capacity': 'Suitable for low to moderate rainfall; consult span tables for local conditions'
+        'Available Thickness': '0.4 mm, 0.5 mm, 0.6 mm',
+        'Effective Coverage': '1060 mm',
+        'Substrate': 'Galvalume 55',
+        'Base Metal Type': 'Cold Rolled Steel - 320 MPa (46400 psi)',
+        'Paint Coating': 'Stard Double Oven-Baked Epoxy Primer and High Grade Polyester Finish',
+        'Coating': 'Top: 15 microns, Bottom: 7 microns (including primer)'
       }
     },
     {
@@ -44,16 +49,16 @@ window.PRODUCTS_DATA = {
       name: 'Super Corr',
       category: 'roofing',
       description: 'Super Corr is a corrugated steel roofing profile with a regular wave pattern. It provides strong weather resistance and is commonly used for sheds, garages, and agricultural structures. The corrugations add rigidity and allow efficient water runoff while keeping weight low.',
-      image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&q=80',
+      image: 'img/products/roofing/super_corr/super-corr-white.png',
       specImage: 'images/specs/super-corr-spec.jpg',
       colors: ROOFING_BENDED_COLORS,
       specs: {
-        'Available Thickness': '0.40 mm – 0.48 mm',
-        'Effective Coverage': '762 mm',
-        'Base Metal Type': 'AZ150 Galvalume',
-        'Substrate': 'Aluminium-zinc alloy coated steel',
-        'Paint Coating': 'Polyester',
-        'Rainfall Capacity': 'Suitable for moderate rainfall; refer to span tables'
+        'Available Thickness': '0.4 mm, 0.5 mm, 0.6 mm',
+        'Effective Coverage': '1060 mm',
+        'Substrate': 'Galvalume 55',
+        'Base Metal Type': 'Cold Rolled Steel - 320 MPa (46400 psi)',
+        'Paint Coating': 'Stard Double Oven-Baked Epoxy Primer and High Grade Polyester Finish',
+        'Coating': 'Top: 15 microns, Bottom: 7 microns (including primer)'
       }
     },
     {
@@ -61,16 +66,16 @@ window.PRODUCTS_DATA = {
       name: 'Super Tile',
       category: 'roofing',
       description: 'Super Tile is a steel roofing profile designed to mimic the appearance of traditional roof tiles. It offers the durability and longevity of steel with an aesthetic suited to residential and commercial applications. The profile provides good drainage and is available in colors that complement tile-style architecture.',
-      image: 'https://images.unsplash.com/photo-1558618662-d4f32f792c66?w=800&q=80',
+      image: 'img/products/roofing/super_tile/super-tile-white.png',
       specImage: 'images/specs/super-tile-spec.jpg',
       colors: ROOFING_BENDED_COLORS,
       specs: {
-        'Available Thickness': '0.42 mm – 0.48 mm',
-        'Effective Coverage': '370 mm',
-        'Base Metal Type': 'AZ150 Galvalume',
-        'Substrate': 'Aluminium-zinc alloy coated steel',
-        'Paint Coating': 'Polyester or PVDF',
-        'Rainfall Capacity': 'Designed for standard rainfall regions; see span tables'
+        'Available Thickness': '0.4 mm, 0.5 mm, 0.6 mm',
+        'Effective Coverage': '1060 mm',
+        'Substrate': 'Galvalume 55',
+        'Base Metal Type': 'Cold Rolled Steel - 320 MPa (46400 psi)',
+        'Paint Coating': 'Stard Double Oven-Baked Epoxy Primer and High Grade Polyester Finish',
+        'Coating': 'Top: 15 microns, Bottom: 7 microns (including primer)'
       }
     },
     {
@@ -78,16 +83,16 @@ window.PRODUCTS_DATA = {
       name: 'Super Crimp',
       category: 'roofing',
       description: 'Super Crimp is a narrow-profile steel roofing sheet with a crimped or folded pattern. It is often used for verandahs, carports, and lean-tos where a compact profile and clean lines are desired. The crimped design adds stiffness and helps with runoff.',
-      image: 'https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=800&q=80',
+      image: 'img/products/roofing/super_crimp/super-crimp-beige.png',
       specImage: 'images/specs/super-crimp-spec.jpg',
-      colors: ROOFING_BENDED_COLORS,
+      colors: SUPER_CRIMP_COLORS,
       specs: {
-        'Available Thickness': '0.40 mm – 0.48 mm',
-        'Effective Coverage': '600 mm',
-        'Base Metal Type': 'AZ150 Galvalume',
-        'Substrate': 'Aluminium-zinc alloy coated steel',
-        'Paint Coating': 'Polyester',
-        'Rainfall Capacity': 'Suitable for low to moderate rainfall; consult span tables'
+        'Available Thickness': '0.6 mm',
+        'Effective Coverage': '1060 mm',
+        'Substrate': 'Galvalume 55',
+        'Base Metal Type': 'Cold Rolled Steel - 320 MPa (46400 psi)',
+        'Paint Coating': 'Stard Double Oven-Baked Epoxy Primer and High Grade Polyester Finish',
+        'Coating': 'Top: 15 microns, Bottom: 7 microns (including primer)'
       }
     },
     {
@@ -95,7 +100,7 @@ window.PRODUCTS_DATA = {
       name: 'Super Deck - 1',
       category: 'decking',
       description: 'Super Deck - 1 is a structural steel floor or roof deck profile with a re-entrant rib design. It is used in composite and non-composite construction for commercial and industrial buildings. The profile provides high load capacity and can be used with concrete fill or as formwork.',
-      image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&q=80',
+      image: 'img/products/decking/super-deck-1.png',
       specImage: 'images/specs/super-deck-1-spec.jpg',
       colors: [],
       specs: {
@@ -111,7 +116,7 @@ window.PRODUCTS_DATA = {
       name: 'Super Deck - 2',
       category: 'decking',
       description: 'Super Deck - 2 is a deeper structural deck profile for longer spans and heavier loads. It is suitable for floor and roof applications where greater stiffness and load capacity are required. The profile is commonly used in multi-storey and industrial structures.',
-      image: 'https://images.unsplash.com/photo-1517581177682-a085bb7ffc15?w=800&q=80',
+      image: 'img/products/decking/super-deck-2.png',
       specImage: 'images/specs/super-deck-2-spec.jpg',
       colors: [],
       specs: {
@@ -486,7 +491,8 @@ window.PRODUCTS_DATA = {
       name: '2" x 3"',
       category: 'cpurlins',
       description: 'C-Purlin 2" x 3" is a cold-formed galvanized steel C-section for roof and wall support. Used as secondary structural members in metal building systems. Suitable for lighter loads and shorter spans.',
-      image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80',
+      image: 'img/products/purlins/c-purlins-2.png',
+      thumbnailImage: 'img/products/purlins/c-purlins.png',
       specImage: 'images/specs/2x3-cpurlin-spec.jpg',
       colors: [],
       specs: {
@@ -502,7 +508,8 @@ window.PRODUCTS_DATA = {
       name: '2" x 4"',
       category: 'cpurlins',
       description: 'C-Purlin 2" x 4" is a cold-formed galvanized C-section for roof and wall purlins and girts. Offers higher load capacity than 2" x 3" and is commonly used in commercial and industrial framing.',
-      image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&q=80',
+      image: 'img/products/purlins/c-purlins-2.png',
+      thumbnailImage: 'img/products/purlins/c-purlins.png',
       specImage: 'images/specs/2x4-cpurlin-spec.jpg',
       colors: [],
       specs: {
@@ -518,7 +525,8 @@ window.PRODUCTS_DATA = {
       name: '2" x 6"',
       category: 'cpurlins',
       description: 'C-Purlin 2" x 6" is the largest of the standard C-sections for heavier loads and longer spans. Used in industrial buildings, warehouses, and where higher wind or snow loads apply.',
-      image: 'https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=800&q=80',
+      image: 'img/products/purlins/c-purlins-2.png',
+      thumbnailImage: 'img/products/purlins/c-purlins.png',
       specImage: 'images/specs/2x6-cpurlin-spec.jpg',
       colors: [],
       specs: {
