@@ -3,7 +3,53 @@
 
   function getQueryParam(name) {
     var match = new RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
-    return match ? decodeURIComponent(match[1]) : null;
+    if (!match) return null;
+    try {
+      return decodeURIComponent(match[1].replace(/\+/g, ' '));
+    } catch (error) {
+      return null;
+    }
+  }
+
+  function getAbsoluteUrl(path) {
+    var link = document.createElement('a');
+    link.href = path;
+    return link.href;
+  }
+
+  function updateMetadata(product) {
+    var pageTitle = product.name + ' | A & G Roof Steel Builders';
+    var description = product.description;
+    var image = getCategoryImage(product.category) || product.image || 'img/generated/steel-products.webp';
+    var canonical = getAbsoluteUrl('product.html?id=' + encodeURIComponent(product.id));
+    var structuredData = document.getElementById('structured-data');
+
+    document.title = pageTitle;
+    document.getElementById('meta-description').setAttribute('content', description);
+    document.getElementById('meta-robots').setAttribute('content', 'index, follow');
+    document.getElementById('og-title').setAttribute('content', pageTitle);
+    document.getElementById('og-description').setAttribute('content', description);
+    document.getElementById('og-image').setAttribute('content', getAbsoluteUrl(image));
+    document.getElementById('og-url').setAttribute('content', canonical);
+    document.getElementById('canonical-url').setAttribute('href', canonical);
+
+    if (!structuredData) {
+      structuredData = document.createElement('script');
+      structuredData.id = 'structured-data';
+      structuredData.type = 'application/ld+json';
+      document.head.appendChild(structuredData);
+    }
+    structuredData.textContent = JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'Product',
+      name: product.name,
+      description: product.description,
+      image: getAbsoluteUrl(image),
+      brand: {
+        '@type': 'Brand',
+        name: 'A & G Roof Steel Builders'
+      }
+    });
   }
 
   function findProduct(id) {
@@ -23,12 +69,20 @@
       roofing: 'products-roofing.html',
       decking: 'products-decking.html',
       bended: 'products-bended.html',
-      spandrel: 'products-spandrel.html',
       cladding: 'products-cladding.html',
       cpurlins: 'products-cpurlins.html',
       hardware: 'products-hardware.html'
     };
     return map[slug] || 'products.html';
+  }
+
+  function getCategoryImage(slug) {
+    var map = {
+      bended: 'img/products/bended/bendedaccs.jpg',
+      cladding: 'img/products/cladding/wallcladding.jpg',
+      hardware: 'img/products/hardware/hardwareaccs.jpg'
+    };
+    return map[slug] || '';
   }
 
   function escapeHtml(text) {
@@ -50,7 +104,7 @@
 
     var img = document.getElementById('product-image');
     if (img) {
-      img.src = product.image || '';
+      img.src = getCategoryImage(product.category) || product.image || '';
       img.alt = product.name;
       img.onerror = function () {
         img.style.display = 'none';
@@ -109,7 +163,15 @@
       for (var key in product.specs) {
         if (product.specs.hasOwnProperty(key)) {
           var tr = document.createElement('tr');
-          tr.innerHTML = '<td class="spec-label">' + escapeHtml(key) + '</td><td class="spec-value">' + escapeHtml(product.specs[key]) + '</td>';
+          var th = document.createElement('th');
+          var td = document.createElement('td');
+          th.className = 'spec-label';
+          th.scope = 'row';
+          th.textContent = key;
+          td.className = 'spec-value';
+          td.textContent = product.specs[key];
+          tr.appendChild(th);
+          tr.appendChild(td);
           specsBody.appendChild(tr);
         }
       }
@@ -119,13 +181,15 @@
 
     content.style.display = 'block';
     notFound.style.display = 'none';
-    document.title = product.name + ' - A & G Roof Steel Builders';
+    updateMetadata(product);
   }
 
   function showNotFound() {
     document.getElementById('product-content').style.display = 'none';
     document.getElementById('product-not-found').style.display = 'block';
     document.title = 'Product Not Found - A & G Roof Steel Builders';
+    document.getElementById('meta-robots').setAttribute('content', 'noindex, nofollow');
+    window.location.replace('not-found');
   }
 
   var id = getQueryParam('id');

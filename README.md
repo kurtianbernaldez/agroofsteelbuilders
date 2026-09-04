@@ -14,10 +14,16 @@ Pure **HTML, CSS, and JavaScript** — no WordPress, PHP, or build tools.
 
 ## How to run
 
-1. Open **index.html** in a browser, or
-2. Serve this folder: `npx serve .` or `python -m http.server 8000`
+Serve this folder so the shared header and footer partials can load:
+
+```bash
+npx serve .
+# or
+python -m http.server 8000
+```
 
 ## Notes
 
-- Hero and project images use Unsplash; replace with your own if needed.
-- Update the contact email in **index.html** (`mailto:info@agroofsteel.com`) as needed.
+- Project images are stored in `img/projects/`.
+- Contact inquiries open a prepared message in the visitor's email application.
+- `robots.txt` and `sitemap.xml` currently use the GitHub Pages URL inferred from this repository. Update them if a custom production domain is used.

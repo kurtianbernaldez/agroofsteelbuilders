@@ -11,7 +11,7 @@
     if (project.images && project.images.length > 0) {
       return project.images[0];
     }
-    return 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80';
+    return 'img/generated/project-industrial.webp';
   }
 
   function renderProjects() {
@@ -47,16 +47,16 @@
       for (var j = 0; j < items.length; j++) {
         var project = items[j];
         var imgUrl = getProjectImage(project);
-        html += '<div class="project-item">';
-        html += '<img src="' + escapeHtml(imgUrl) + '" alt="' + escapeHtml(project.name) + '">';
-        html += '<div class="project-overlay" style="opacity: 1;">';
+        html += '<article class="project-item">';
+        html += '<div class="project-item__media">';
+        html += '<img src="' + escapeHtml(imgUrl) + '" alt="' + escapeHtml(project.name) + '" loading="lazy">';
+        html += '</div>';
         html += '<div class="project-details">';
         html += '<h3>' + escapeHtml(project.name) + '</h3>';
         html += '<p>' + escapeHtml(project.description) + '</p>';
         html += '<a href="project.html?id=' + escapeHtml(project.id) + '">View Details</a>';
         html += '</div>';
-        html += '</div>';
-        html += '</div>';
+        html += '</article>';
       }
 
       html += '</div>';

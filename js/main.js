@@ -11,9 +11,31 @@
     var el = document.getElementById(id);
     if (!el) return Promise.resolve();
     var url = getPartialsBase() + file;
-    return fetch(url).then(function (r) { return r.text(); }).then(function (html) {
+    return fetch(url).then(function (r) {
+      if (!r.ok) throw new Error('Unable to load ' + url + ' (' + r.status + ')');
+      return r.text();
+    }).then(function (html) {
       el.innerHTML = html;
-    }).catch(function () {});
+    }).catch(function (error) {
+      renderPartialFallback(el, id);
+      if (window.console && window.console.error) window.console.error(error);
+    });
+  }
+
+  function renderPartialFallback(el, id) {
+    if (id === 'utility-bar-placeholder') {
+      el.innerHTML = '<div class="utility-bar"><div class="container"><div class="utility-bar__left"><a href="tel:+639912055087">+63 991 205 5087</a><a href="mailto:agroofsteel@yahoo.com">agroofsteel@yahoo.com</a></div></div></div>';
+      return;
+    }
+
+    if (id === 'header-placeholder') {
+      el.innerHTML = '<header class="site-header"><div class="container"><a href="index.html" class="site-logo" aria-label="A and G Roof Steel Builders home"><img src="img/logo.png?v=2" alt="A & G Roof Steel Builders"></a><button class="nav-toggle" id="navToggle" type="button" aria-label="Open navigation" aria-controls="mainNav" aria-expanded="false"><i class="fas fa-bars" aria-hidden="true"></i></button><nav class="main-nav" id="mainNav" aria-label="Primary navigation"><a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="products.html">Products</a><a href="projects.html">Projects</a><a href="index.html#contact" class="nav-cta">Get a Quote</a></nav></div></header>';
+      return;
+    }
+
+    if (id === 'footer-placeholder') {
+      el.innerHTML = '<footer class="site-footer"><div class="container"><div class="footer-grid"><div class="footer-brand"><div class="footer-brand__identity"><img src="img/aglogobw.webp?v=1" alt="A&G Roof Steel Builders logo" class="footer-brand__logo" loading="lazy"></div><p>Premium steel roofing and building solutions. Trusted since 2012.</p></div><div class="footer-col"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="services.html">Services</a></li><li><a href="products.html">Products</a></li><li><a href="projects.html">Projects</a></li></ul></div><div class="footer-col"><h4>Contact Us</h4><div class="footer-contact"><div class="footer-contact-item"><a href="tel:+639912055087">+63 991 205 5087</a></div><div class="footer-contact-item"><a href="mailto:agroofsteel@yahoo.com">agroofsteel@yahoo.com</a></div></div></div></div></div></footer>';
+    }
   }
 
   function loadPartials() {
@@ -43,29 +65,32 @@
     var mainNav = document.getElementById('mainNav');
 
     if (navToggle && mainNav) {
-    navToggle.addEventListener('click', function () {
-      mainNav.classList.toggle('is-open');
-      var icon = navToggle.querySelector('i');
-      if (icon) {
-        icon.classList.toggle('fa-bars');
-        icon.classList.toggle('fa-times');
-      }
-    });
-    }
-
-    mainNav.querySelectorAll('a').forEach(function (link) {
-      link.addEventListener('click', function () {
-        if (window.innerWidth <= 768) {
-          mainNav.classList.remove('is-open');
-          var icon = navToggle.querySelector('i');
-          if (icon) {
-            icon.classList.add('fa-bars');
-            icon.classList.remove('fa-times');
-          }
+      navToggle.addEventListener('click', function () {
+        var isOpen = mainNav.classList.toggle('is-open');
+        navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        navToggle.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
+        var icon = navToggle.querySelector('i');
+        if (icon) {
+          icon.classList.toggle('fa-bars');
+          icon.classList.toggle('fa-times');
         }
       });
-    });
-  }
+
+      mainNav.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () {
+          if (window.innerWidth <= 768) {
+            mainNav.classList.remove('is-open');
+            navToggle.setAttribute('aria-expanded', 'false');
+            navToggle.setAttribute('aria-label', 'Open navigation');
+            var icon = navToggle.querySelector('i');
+            if (icon) {
+              icon.classList.add('fa-bars');
+              icon.classList.remove('fa-times');
+            }
+          }
+        });
+      });
+    }
 
   // Sticky header shadow
   var header = document.querySelector('.site-header');
@@ -145,13 +170,33 @@
 
   // FAQ accordion
   var faqItems = document.querySelectorAll('.faq-item');
-  faqItems.forEach(function (item) {
+  faqItems.forEach(function (item, index) {
     var question = item.querySelector('.faq-question');
-    if (question) {
+    var answer = item.querySelector('.faq-answer');
+    if (question && answer) {
+      var questionId = 'faq-question-' + (index + 1);
+      var answerId = 'faq-answer-' + (index + 1);
+      question.id = questionId;
+      answer.id = answerId;
+      question.setAttribute('aria-expanded', 'false');
+      question.setAttribute('aria-controls', answerId);
+      answer.setAttribute('role', 'region');
+      answer.setAttribute('aria-labelledby', questionId);
+      answer.hidden = true;
       question.addEventListener('click', function () {
         var isActive = item.classList.contains('active');
-        faqItems.forEach(function (fi) { fi.classList.remove('active'); });
-        if (!isActive) item.classList.add('active');
+        faqItems.forEach(function (fi) {
+          fi.classList.remove('active');
+          var fiQuestion = fi.querySelector('.faq-question');
+          var fiAnswer = fi.querySelector('.faq-answer');
+          if (fiQuestion) fiQuestion.setAttribute('aria-expanded', 'false');
+          if (fiAnswer) fiAnswer.hidden = true;
+        });
+        if (!isActive) {
+          item.classList.add('active');
+          question.setAttribute('aria-expanded', 'true');
+          answer.hidden = false;
+        }
       });
     }
   });
@@ -164,6 +209,7 @@
       var name = form.querySelector('#name');
       var email = form.querySelector('#email');
       var message = form.querySelector('#message');
+      var status = document.getElementById('contact-form-status');
       if (name && email && message) {
         var subject = encodeURIComponent('Project Inquiry from ' + name.value);
         var body = encodeURIComponent(
@@ -173,9 +219,13 @@
           'Service: ' + (form.querySelector('#service') ? form.querySelector('#service').value : '') + '\n\n' +
           message.value
         );
-        window.location.href = 'mailto:info@agroofsteel.com?subject=' + subject + '&body=' + body;
+        if (status) {
+          status.textContent = 'Your email app should open now. Review the message and press Send to complete your inquiry.';
+        }
+        window.location.href = 'mailto:agroofsteel@yahoo.com?subject=' + subject + '&body=' + body;
       }
     });
+  }
   }
 
   document.addEventListener('DOMContentLoaded', function () {
