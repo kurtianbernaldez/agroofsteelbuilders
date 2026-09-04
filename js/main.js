@@ -201,31 +201,6 @@
     }
   });
 
-  // Contact form
-  var form = document.getElementById('contactForm');
-  if (form) {
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      var name = form.querySelector('#name');
-      var email = form.querySelector('#email');
-      var message = form.querySelector('#message');
-      var status = document.getElementById('contact-form-status');
-      if (name && email && message) {
-        var subject = encodeURIComponent('Project Inquiry from ' + name.value);
-        var body = encodeURIComponent(
-          'Name: ' + name.value + '\n' +
-          'Email: ' + email.value + '\n' +
-          'Phone: ' + (form.querySelector('#phone') ? form.querySelector('#phone').value : '') + '\n' +
-          'Service: ' + (form.querySelector('#service') ? form.querySelector('#service').value : '') + '\n\n' +
-          message.value
-        );
-        if (status) {
-          status.textContent = 'Your email app should open now. Review the message and press Send to complete your inquiry.';
-        }
-        window.location.href = 'mailto:agroofsteel@yahoo.com?subject=' + subject + '&body=' + body;
-      }
-    });
-  }
   }
 
   document.addEventListener('DOMContentLoaded', function () {

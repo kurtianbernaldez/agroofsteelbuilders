@@ -1,7 +1,9 @@
+// Use ISO YYYY-MM-DD dates so the homepage can identify the newest projects.
 window.PROJECTS_DATA = [
   {
     id: 'pentax-factory',
     name: 'New Pentax Factory',
+    date: '2013-03-13',
     location: 'MEPZ-1, Mactan, Lapu-Lapu City, Cebu, Philippines',
     type: 'Industrial',
     client: 'Nishin Metal Corporation',
@@ -16,6 +18,7 @@ window.PROJECTS_DATA = [
   {
     id: 'apo-cement-port',
     name: 'APO Cement Jetty Port Terminal',
+    date: '2014-07-31',
     location: 'Tinaan, Naga, Cebu, Philippines',
     type: 'Industrial',
     client: 'PEG South East Asia, Inc.',
@@ -32,6 +35,7 @@ window.PROJECTS_DATA = [
   {
     id: 'austal',
     name: 'Austal Phox BLDG. 4, 5, 6 & 7',
+    date: '2018-01-03',
     location: 'Wcip-Sez, Balamban, Cebu, Philippines',
     type: 'Industrial',
     client: 'Aboitiz Construction, Inc.',
@@ -47,6 +51,7 @@ window.PROJECTS_DATA = [
   {
     id: 'toyoflex-m2',
     name: 'M2 Roofing Works, Toyoflex',
+    date: '2020-03-13',
     location: 'Cebu Light Industrial Park, Lapu-Lapu City, Cebu',
     type: 'Industrial',
     client: 'BMBA Construction Services',
@@ -62,6 +67,7 @@ window.PROJECTS_DATA = [
   {
     id: 'toyoflex-mez1',
     name: 'MEZ 1 Renovation Works, Toyoflex',
+    date: '2021-07-08',
     location: 'MEZ 1 Pusok, Lapu-Lapu City, Cebu, Philippines',
     type: 'Industrial',
     client: 'SMCC Philippines, Inc.',
@@ -79,6 +85,7 @@ window.PROJECTS_DATA = [
   {
     id: 'pasar-ap1',
     name: 'PASAR AP1 Operation Breakroom',
+    date: '2021-07-08',
     location: 'Isabel, Leyte, Philippines',
     type: 'Industrial',
     client: 'Puyat Steel Corporation',
@@ -93,6 +100,7 @@ window.PROJECTS_DATA = [
   {
     id: 'amoa-housing',
     name: 'Amoa Housing Units',
+    date: '2020-08-30',
     location: 'Compostela, Cebu, Philippines',
     type: 'Residential',
     client: 'Aboitiz Construction, Inc.',

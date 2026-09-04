@@ -12,11 +12,21 @@
     return div.innerHTML;
   }
 
+  function sortProjectsByNewest(projects) {
+    return projects.slice().sort(function (a, b) {
+      var dateA = a.date || '';
+      var dateB = b.date || '';
+
+      if (dateA === dateB) return 0;
+      return dateA < dateB ? 1 : -1;
+    });
+  }
+
   function loadRecentProjects() {
     var container = document.getElementById('recent-projects');
     if (!container || !window.PROJECTS_DATA) return;
 
-    var recentProjects = window.PROJECTS_DATA.slice(0, 3);
+    var recentProjects = sortProjectsByNewest(window.PROJECTS_DATA).slice(0, 3);
     var html = '';
 
     recentProjects.forEach(function (project) {
