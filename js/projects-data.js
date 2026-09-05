@@ -99,7 +99,7 @@ window.PROJECTS_DATA = [
   },
   {
     id: 'private-residence-tuyan-nov-2025',
-    name: 'Private Residence – Tuyan, November 2025',
+    name: 'Private Residence – Tuyan',
     date: '2025-11-21',
     location: 'Tuyan, City of Naga, Cebu, Philippines',
     type: 'Residential',
@@ -116,7 +116,7 @@ window.PROJECTS_DATA = [
   },
   {
     id: 'private-residence-tuyan-jul-2025',
-    name: 'Private Residence – Tuyan, July 2025',
+    name: 'Private Residence – Tuyan',
     date: '2025-07-11',
     location: 'Tuyan, City of Naga, Cebu, Philippines',
     type: 'Residential',
