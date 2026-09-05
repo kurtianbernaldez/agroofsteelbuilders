@@ -111,7 +111,10 @@ window.PROJECTS_DATA = [
     images: [
       'img/projects/private-residence-nov-2025-2.webp',
       'img/projects/private-residence-nov-2025-1.webp',
-      'img/projects/private-residence-nov-2025-3.webp'
+      'img/projects/private-residence-nov-2025-3.webp',
+      'img/projects/private-residence-nov-2025-4.webp',
+      'img/projects/private-residence-nov-2025-5.webp',
+      'img/projects/private-residence-nov-2025-6.webp'
     ]
   },
   {
