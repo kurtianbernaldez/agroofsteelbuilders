@@ -1438,6 +1438,13 @@ body.home .utility-bar {
 
 .contact-direct__button--call:hover { background: var(--accent-hover); }
 
+.contact-direct__button--email {
+  background: var(--primary);
+  color: var(--white);
+}
+
+.contact-direct__button--email:hover { background: var(--primary-light); }
+
 .contact-direct__note {
   margin-bottom: 10px;
   color: var(--text);

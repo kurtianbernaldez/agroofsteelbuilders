@@ -24,7 +24,7 @@
 
   function renderPartialFallback(el, id) {
     if (id === 'utility-bar-placeholder') {
-      el.innerHTML = '<div class="utility-bar"><div class="container"><div class="utility-bar__left"><a href="tel:+639912055087">+63 991 205 5087</a><a href="mailto:agroofsteel@yahoo.com">agroofsteel@yahoo.com</a></div></div></div>';
+      el.innerHTML = '<div class="utility-bar"><div class="container"><div class="utility-bar__left"><a href="tel:+639912055087">+63 991 205 5087</a><a href="tel:+639279760826">+63 927 976 0826</a><a href="mailto:agroofsteel@yahoo.com">agroofsteel@yahoo.com</a><a href="mailto:agrsbuilders@gmail.com">agrsbuilders@gmail.com</a></div></div></div>';
       return;
     }
 
@@ -34,7 +34,7 @@
     }
 
     if (id === 'footer-placeholder') {
-      el.innerHTML = '<footer class="site-footer"><div class="container"><div class="footer-grid"><div class="footer-brand"><div class="footer-brand__identity"><img src="img/aglogobw.webp?v=1" alt="A&G Roof Steel Builders logo" class="footer-brand__logo" loading="lazy"></div><p>Premium steel roofing and building solutions. Trusted since 2012.</p></div><div class="footer-col"><h4>Quick Links</h4><ul><li><a href="/">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="services.html">Services</a></li><li><a href="products.html">Products</a></li><li><a href="projects.html">Projects</a></li></ul></div><div class="footer-col"><h4>Contact Us</h4><div class="footer-contact"><div class="footer-contact-item"><a href="tel:+639912055087">+63 991 205 5087</a></div><div class="footer-contact-item"><a href="mailto:agroofsteel@yahoo.com">agroofsteel@yahoo.com</a></div></div></div></div></div></footer>';
+      el.innerHTML = '<footer class="site-footer"><div class="container"><div class="footer-grid"><div class="footer-brand"><div class="footer-brand__identity"><img src="img/aglogobw.webp?v=1" alt="A&G Roof Steel Builders logo" class="footer-brand__logo" loading="lazy"></div><p>Premium steel roofing and building solutions. Trusted since 2012.</p></div><div class="footer-col"><h4>Quick Links</h4><ul><li><a href="/">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="services.html">Services</a></li><li><a href="products.html">Products</a></li><li><a href="projects.html">Projects</a></li></ul></div><div class="footer-col"><h4>Contact Us</h4><div class="footer-contact"><div class="footer-contact-item"><a href="tel:+639912055087">+63 991 205 5087</a></div><div class="footer-contact-item"><a href="tel:+639279760826">+63 927 976 0826</a></div><div class="footer-contact-item"><a href="mailto:agroofsteel@yahoo.com">agroofsteel@yahoo.com</a></div><div class="footer-contact-item"><a href="mailto:agrsbuilders@gmail.com">agrsbuilders@gmail.com</a></div></div></div></div></div></footer>';
     }
   }
 
