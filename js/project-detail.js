@@ -69,7 +69,7 @@
     var notFound = document.getElementById('project-not-found');
 
     if (breadcrumb) {
-      breadcrumb.innerHTML = '<a href="index.html">Home</a> &rarr; <a href="projects.html">Projects</a> &rarr; ' + escapeHtml(project.name);
+      breadcrumb.innerHTML = '<a href="/">Home</a> &rarr; <a href="projects.html">Projects</a> &rarr; ' + escapeHtml(project.name);
     }
 
     var title = document.getElementById('project-title');
