@@ -98,6 +98,41 @@ window.PROJECTS_DATA = [
     ]
   },
   {
+    id: 'private-residence-tuyan-nov-2025',
+    name: 'Private Residence – Tuyan, November 2025',
+    date: '2025-11-21',
+    location: 'Tuyan, City of Naga, Cebu, Philippines',
+    type: 'Residential',
+    client: 'Private Residential Client',
+    scope: 'Roofing and structural works',
+    area: { type: 'Total Area', value: '' },
+    status: 'Completed as of November 21, 2025',
+    description: 'Residential roofing and structural works completed for a private residence in Tuyan, Naga, Cebu.',
+    images: [
+      'img/projects/private-residence-nov-2025-2.webp',
+      'img/projects/private-residence-nov-2025-1.webp',
+      'img/projects/private-residence-nov-2025-3.webp'
+    ]
+  },
+  {
+    id: 'private-residence-tuyan-jul-2025',
+    name: 'Private Residence – Tuyan, July 2025',
+    date: '2025-07-11',
+    location: 'Tuyan, City of Naga, Cebu, Philippines',
+    type: 'Residential',
+    client: 'Private Residential Client',
+    scope: 'Removal of existing roofing, and supply and installation of new roofing',
+    area: { type: 'Total Area', value: '' },
+    status: 'Completed as of July 11, 2025',
+    description: 'Residential roof replacement for a private residence, including removal of the existing roofing and supply and installation of a new roofing system.',
+    images: [
+      'img/projects/private-residence-jul-2025-3.webp',
+      'img/projects/private-residence-jul-2025-2.webp',
+      'img/projects/private-residence-jul-2025-4.webp',
+      'img/projects/private-residence-jul-2025-1.webp'
+    ]
+  },
+  {
     id: 'amoa-housing',
     name: 'Amoa Housing Units',
     date: '2020-08-30',
